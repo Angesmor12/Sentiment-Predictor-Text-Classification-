@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Predictor</title>
+    <link rel="stylesheet" href="./styles/index.css">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1" />
+    <meta name='keywords' content='sentiment analysis, text classification, recurrent neural networks, RNN, LSTM, GRU, Twitter data, sentiment prediction, positive sentiment, negative sentiment, neutral sentiment, machine learning, natural language processing, NLP, deep learning, text analysis, social media analysis, AI, predictive modeling' />
+    <meta name='author' content='Angelo Smorlesi' />
+    <meta name='description' content='A website that uses AI algorithms to analyze text and predict sentiment, classifying it as positive, negative, or neutral, using a dataset of tweets from Twitter.' />
+    <meta name='copyright' content='Angelo Smorlesi' />
+    <meta name='robots' content='index,follow,translate' />
+    <link rel="icon" href="./images/sentiment.ico" type="image/x-icon" />
+
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.14.0/dist/onnxruntime-web.min.js"></script>
+
+</head>
+<body>
+  
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+
+  <main>
+    <figure>
+        <img     
+        src="/images/sentiment.png"
+        alt="Citymap illustration" 
+        />
+    </figure>
+    <div class="form">
+      
+      <h2>Sentiment Predictor</h2>
+      <p class="description">This project leverages AI algorithms to analyze text and predict sentiment, classifying it as positive, negative, or neutral. The model was trained on a dataset of tweets from Twitter, allowing it to learn patterns in text sentiment.</p>
+
+      <select class="algorithm-input">
+        <option value="none" data-json="base.json">Select model</option>
+        <option value="https://phenomenal-pavlova-26f76e.netlify.app/model_gru_dc.onnx" data-json="base.json" selected>GRU</option>
+        <option value="https://phenomenal-pavlova-26f76e.netlify.app/model_gru_st.onnx" data-json="stemming.json">GRU_ST</option>
+      </select>
+      
+      <textarea id="message" name="message" rows="5" cols="30" placeholder="Write your comment here"></textarea><br><br>
+
+      <button class="calculate">Predict sentiment</button>
+      
+      <div class="sentiment_container">
+
+        <div class="sentiment_container_value hidden">
+          <p id="sentiment_value_text">Predicted Sentiment : <p id="sentiment_value_value"></p></p>
+        </div>
+
+        <div class="loading-image-container hidden"><img class="loading-image" src="./images/loading.gif" alt="loading"></div>
+
+      </div>
+
+      <div class="copy-container"><p class="copyright"> @Angelo Smorlesi</p></div>
+    </div>
+    
+  </main>
+
+  <script src="index.js"></script>
+
+</body>
+</html>
