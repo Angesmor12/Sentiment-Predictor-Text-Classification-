@@ -181,6 +181,10 @@ button{
     margin-top: 4rem;
   }
 
+  #sentiment_value_text, #sentiment_value_value{
+    font-size: 0.9;
+  }
+
   .loading-image{
     width: 60px !important;
     height: 60px !important;
